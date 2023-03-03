@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- script src="https://res.cdn.office.net/teams-js/2.2.0/js/MicrosoftTeams.min.js" crossorigin="anonymous">
+  </script -->
+  <script src="./js/MicrosoftTeams.min.js"> </script>
+</head>
+
+<body>
+  <h1>Configuration Yellow</h1>
+  <p>Titre onglet :</p>
+  <input type="text" id="idTabName"></input>
+  <p>Code de réunion :</p>
+  <input type="text" id="idSessionCode"></input>
+</body>
+<script>
+  const tabName = document.getElementById("idTabName").value;
+  const sessionCode = document.getElementById("idSessionCode").value;
+
+  microsoftTeams.app.initialize().then(() => {
+
+
+    microsoftTeams.app.getContext().then((context) => { 
+      document.getElementById("inputText").value = context.theme;  
+    });
+
+
+/*     microsoftTeams.pages.config.registerOnSaveHandler((saveEvent) => {
+      microsoftTeams.pages.config.setConfig({
+        suggestedDisplayName: "My Tab",
+        entityId: "Test",
+        contentUrl: "https://simplewebappservice.azurewebsites.net/tab.html",
+        websiteUrl: "https://simplewebappservice.azurewebsites.net",
+      }).then(() => {
+        saveEvent.notifySuccess();
+      });
+    });
+     */
+
+     microsoftTeams.pages.config.registerOnSaveHandler((saveEvent) => {
+      microsoftTeams.pages.config.setConfig({
+        suggestedDisplayName: tabName,
+        entityId: "Yellow",
+        contentUrl: "https://yellowintegration.azurewebsites.net/Whiteboard/"+sessionCode+"/Guest",
+        websiteUrl: "https://yellowintegration.azurewebsites.net",
+      }).then(() => {
+        saveEvent.notifySuccess();
+      });
+    });
+
+    microsoftTeams.pages.config.setValidityState(true);
+  });
+
+
+</script>
+
+</html>
