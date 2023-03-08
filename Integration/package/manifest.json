@@ -1,7 +1,7 @@
 {
     "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.14/MicrosoftTeams.schema.json",
     "manifestVersion": "1.14",
-    "version": "1.0.10",
+    "version": "1.0.14",
     "id": "1a9701a5-3d08-4a26-b784-343e5dff949a",
     "packageName": "com.microsoft.teams.extension",
     "developer": {
@@ -19,8 +19,8 @@
         "full": "L&#x27;application Yellow pour une expérience intégrée de Yellow dans MS Teams"
     },
     "description": {
-        "short": "Short description of Yellow",
-        "full": "Full description of Yellow"
+        "short": "Un tableau blanc collaboratif",
+        "full": "Un tableau blanc pour collaborer de manière visuelle où que vous soyez et illuminer vos réunions, workshops et présentations."
     },
     "accentColor": "#FFFFFF",
     "bots": [],
@@ -28,7 +28,7 @@
     "configurableTabs": [
         {
             "configurationUrl": "https://yellowintegration.azurewebsites.net/Extensions/MsTeams/TabConfig",
-            "canUpdateConfiguration": true,
+            "canUpdateConfiguration": false,
             "scopes": [
                 "team",
                 "groupchat"
@@ -36,12 +36,10 @@
             "context": [
                 "meetingChatTab",
                 "meetingDetailsTab",
-                "meetingSidePanel",
                 "meetingStage",
                 "channelTab"
             ],
             "meetingSurfaces": [
-                "sidePanel",
                 "stage"
             ]
         }
