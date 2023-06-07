@@ -1,0 +1,7 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.8/MicrosoftTeams.Localization.schema.json",
+    "name.short": "Yellow for Sensorit",
+    "name.full": "Yellow's integrated MS Teams experience",
+    "description.short": "A collaborative whiteboard",
+    "description.full": "A whiteboard to visually collaborate wherever you are and brighten up your meetings, workshops and presentations."
+}
