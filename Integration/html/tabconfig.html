@@ -26,7 +26,7 @@
 /*    microsoftTeams.app.getContext().then((context) => { 
       document.getElementById("inputText").value = context.theme;  
     });
-
+*/
 
      microsoftTeams.pages.config.registerOnSaveHandler((saveEvent) => {
       microsoftTeams.pages.config.setConfig({
@@ -39,6 +39,9 @@
       });
     });
      */
+
+    const tabName = document.getElementById("idTabName").value;
+    const sessionCode = document.getElementById("idSessionCode").value;
 
      microsoftTeams.pages.config.registerOnSaveHandler((saveEvent) => {
 
